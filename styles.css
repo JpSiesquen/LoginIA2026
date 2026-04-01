@@ -1,0 +1,195 @@
+:root {
+  --bg-1: #ffd166;
+  --bg-2: #06d6a0;
+  --bg-3: #118ab2;
+  --card: #fff8e7;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --ok: #0a7d32;
+  --error: #b00020;
+  --focus: #ff7b00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.45) 0 16%, transparent 17%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.35) 0 18%, transparent 19%),
+    linear-gradient(130deg, var(--bg-1), var(--bg-2), var(--bg-3));
+  background-size: cover;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: min(420px, 100%);
+  background: linear-gradient(170deg, #fffdf8 0%, var(--card) 100%);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  animation: rise 550ms ease-out;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.brand {
+  margin-bottom: 18px;
+}
+
+.brand-badge {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ff7b00;
+  color: white;
+  font-weight: 700;
+}
+
+.brand-kicker {
+  margin: 12px 0 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.brand-copy {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+input {
+  width: 100%;
+  border: 2px solid #d4d4d8;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 1rem;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+input:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+input:focus {
+  border-color: #118ab2;
+  box-shadow: 0 0 0 4px rgba(17, 138, 178, 0.2);
+}
+
+.password-wrap {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.ghost-btn,
+.primary-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ghost-btn {
+  background: #ffe4bf;
+  color: #7a3e00;
+}
+
+.primary-btn {
+  margin-top: 8px;
+  background: linear-gradient(90deg, #ff7b00, #ff9f1c);
+  color: white;
+  transition: transform 150ms ease, filter 150ms ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.primary-btn:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.25);
+  opacity: 0.7;
+}
+
+small {
+  color: var(--muted);
+  margin-top: -2px;
+}
+
+.status {
+  min-height: 1.4em;
+  margin: 14px 0 0;
+  font-weight: 700;
+}
+
+.status.error {
+  color: var(--error);
+}
+
+.status.success {
+  color: var(--ok);
+}
+
+.hint-box {
+  margin-top: 16px;
+  color: var(--muted);
+}
+
+.hint-box summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
