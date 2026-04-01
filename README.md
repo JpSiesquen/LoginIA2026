@@ -1,4 +1,4 @@
-# LOGINIA
+# LOGIN IA
 Proyecto de login simple con HTML, CSS y JavaScript.
 
 ## Archivos
